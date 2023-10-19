@@ -7,7 +7,6 @@ const Home = () => {
     <div className='home-page'>
       <Header />
       <Form />
-      <h1>Home !!</h1>
     </div>
   )
 }

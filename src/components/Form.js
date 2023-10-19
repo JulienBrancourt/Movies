@@ -18,9 +18,19 @@ const Form = () => {
         <div className="form-component">
             <div className="form-container">
                 <form>
-                    <input type="text" placeholder="Entrez le titre d'un film" id="search-input"
-                    onChange={(e) => setSearch(e.target.value)}/>
-                    <input type="submit" value="Rechercher"/>
+                    <input
+                        type="text"
+                        placeholder="Entrez le titre d'un film"
+                        id="search-input"
+                        // onChange={(e) => setSearch(e.target.value)}
+                    />
+                    <input type="submit" value="Rechercher"
+                        onClick={(e) =>
+                            {
+                            e.preventDefault();
+                            setSearch(e.target.value);
+                            }
+                        }/>
                 </form>
                 <div className="btn-sort-container">
                     <div className="btn-sort" id="goodToBad" onClick={(e) => setSortGoodBad ("goodToBad")}>Top</div>
