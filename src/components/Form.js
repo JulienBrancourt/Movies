@@ -5,7 +5,7 @@ import Card from "./Card";
 const Form = () => {
 
     const [moviesData, setMoviesData] = useState([])
-    const [search, setSearch] = useState("war")
+    const [search, setSearch] = useState("movie")
     const [sortGoodBad, setSortGoodBad] = useState(null)
 
     useEffect(() => {
@@ -13,6 +13,12 @@ const Form = () => {
             .get(`https://api.themoviedb.org/3/search/movie?query=${search}&include_adult=true&language=fr-FR&page=1&api_key=df285cc063fe809437d048fae1cf2045`)
             .then((res) => setMoviesData(res.data.results))
     },[search])
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const inputValue = document.getElementById('search-input').value;
+        setSearch(inputValue);//la nouvelle valeur de search est celle de inputValue (l'input type texte)
+    }
 
     return (
         <div className="form-component">
@@ -22,15 +28,13 @@ const Form = () => {
                         type="text"
                         placeholder="Entrez le titre d'un film"
                         id="search-input"
-                        // onChange={(e) => setSearch(e.target.value)}
+                        defaultValue={search}
                     />
-                    <input type="submit" value="Rechercher"
-                        onClick={(e) =>
-                            {
-                            e.preventDefault();
-                            setSearch(e.target.value);
-                            }
-                        }/>
+                    <input
+                        type="submit"
+                        value="Rechercher"
+                        onClick={handleSearch}
+                    />
                 </form>
                 <div className="btn-sort-container">
                     <div className="btn-sort" id="goodToBad" onClick={(e) => setSortGoodBad ("goodToBad")}>Top</div>
