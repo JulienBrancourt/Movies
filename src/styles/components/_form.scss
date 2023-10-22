@@ -59,9 +59,9 @@
       transition: 0.3s;
       position: relative;
 
-      &:hover {
-        background: $black;
-      }
+      // &:hover {
+      //   background: $black;
+      // }
     }
     #goodToBad span {
       transform: translateY(-50%) rotate(-90deg);
