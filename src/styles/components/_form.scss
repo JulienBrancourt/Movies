@@ -22,7 +22,7 @@
       width: 220px;
       border-radius: 0 0 10px 10px;
       border: none;
-      background: $color-1;
+      background: #0582bc;
       color: $white;
       font-size: 1.5rem;
       cursor: pointer;
@@ -43,13 +43,18 @@
 
     #goodToBad {
       border-radius: 10px 0 0 10px;
+      border-right: #0582bc solid 1px;
+      box-shadow: inset 20px 20px 20px #021738,
+            inset -20px -20px 20px #0582bc;
     }
     #badToGood {
       border-radius: 0 10px 10px 0;
+      box-shadow: inset -20px 20px 20px #021738,
+            inset 20px -20px 20px #0582bc;
     }
     #goodToBad,
     #badToGood {
-      background: $color-1;
+      background: #03204f;
       width: 110px;
       transition: 0.3s;
       position: relative;
