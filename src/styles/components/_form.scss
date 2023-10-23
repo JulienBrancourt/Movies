@@ -46,11 +46,21 @@
       border-right: #0582bc solid 1px;
       box-shadow: inset 20px 20px 20px #021738,
             inset -20px -20px 20px #0582bc;
+
+      &:hover {
+        box-shadow: inset 20px 20px 20px #0582bc,
+            inset -20px -20px 20px #021738;
+      }
     }
     #badToGood {
       border-radius: 0 10px 10px 0;
       box-shadow: inset -20px 20px 20px #021738,
             inset 20px -20px 20px #0582bc;
+
+      &:hover {
+        box-shadow: inset -20px 20px 20px #0582bc,
+            inset 20px -20px 20px #021738;
+      }
     }
     #goodToBad,
     #badToGood {

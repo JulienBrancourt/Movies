@@ -1,16 +1,25 @@
 .header {
+  
   h1 {
     font-size: 3.3rem;
     text-shadow: 2px 3px 0px black;
-;
     text-align: center;
     letter-spacing: 2px;
+    @media (max-width: 680px) {
+      padding-top: 10px;
+    }
   }
   nav {
     position: absolute;
     top: 16px;
     left: 16px;
     font-size: 1.3rem;
+    display: flex;
+    justify-content: space-around;
+    @media (max-width: 680px) {
+    position: relative;
+    font-size: 1rem;
+  }
 
     ul {
       display: flex;
