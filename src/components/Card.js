@@ -119,16 +119,20 @@ const Card = ({movie}) => {
                 }
             </ul>
             
-            {movie.overview ? <h3>Synopsis</h3> : ""}
+            <section className="synopsislike">
+                {movie.overview ? <h3>Synopsis</h3> : ""}
+                
+                {movie.genre_ids
+                    ? (<div className="btn" onClick={() => addStorage()}>❤️</div>)
+                    : (<div className="btn" onClick={() => {
+                        deleteStorage();
+                        window.location.reload();}               
+                    }>💔</div>)           
+                    }
+            </section>
+            
             <p>{movie.overview}</p>
 
-            {movie.genre_ids
-                ? (<div className="btn" onClick={() => addStorage()}>Ajouter aux coups de coeur</div>)
-                : (<div className="btn" onClick={() => {
-                    deleteStorage();
-                    window.location.reload();}               
-                }>Supprimer de la liste</div>)           
-            }
         </div>
     )
 };

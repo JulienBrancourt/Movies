@@ -5,7 +5,7 @@ import Card from "./Card";
 const Form = () => {
 
     const [moviesData, setMoviesData] = useState([])
-    const [search, setSearch] = useState("movie")
+    const [search, setSearch] = useState("jurassic")
     const [sortGoodBad, setSortGoodBad] = useState(null)
 
     useEffect(() => {
@@ -43,7 +43,7 @@ const Form = () => {
             </div>
             <div className="result">{
                 moviesData
-                    .slice(0, 12)
+                    // .slice(0, 12)
                     .sort((a, b) => {
                         if (sortGoodBad === "goodToBad") {
                             return b.vote_average - a.vote_average;

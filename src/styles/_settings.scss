@@ -2,13 +2,8 @@
   font-family: "font-1";
   src: url(../assets/fonts/PlaypenSans-VariableFont_wght.ttf);
 }
-@font-face {
-  font-family: "font-2";
-  src: url(../assets/fonts/Roboto-Regular.ttf);
-}
 
 $font-1: "font-1", sans-serif;
-$font-2: "font-2", sans-serif;
 
 $color-1: #546fe4;
 $color-2: #03204f;
@@ -34,9 +29,5 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  font-family: $font-2;
 }
 
-.card {
-  font-family: $font-2;
-}
