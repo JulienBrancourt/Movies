@@ -5,7 +5,7 @@ import Card from "./Card";
 const Form = () => {
 
     const [moviesData, setMoviesData] = useState([])
-    const [search, setSearch] = useState(window.localStorage.moviesearch)
+    const [search, setSearch] = useState(window.localStorage.moviesearch ? window.localStorage.moviesearch : "")
     const [sortGoodBad, setSortGoodBad] = useState(null)
 
     useEffect(() => {
