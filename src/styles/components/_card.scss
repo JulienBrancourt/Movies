@@ -112,8 +112,10 @@
     color: $white;
     font-size: 0.9rem;
     line-height: 20px;
-    height: 160px;
+    height: 140px;
     overflow-y: scroll;
+    padding-bottom: 15px;
+    text-align: justify;
 
     &::-webkit-scrollbar {
       display: none;
