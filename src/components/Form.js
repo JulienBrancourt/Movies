@@ -5,7 +5,7 @@ import Card from "./Card";
 const Form = () => {
 
     const [moviesData, setMoviesData] = useState([])
-    const [search, setSearch] = useState("jurassic")
+    const [search, setSearch] = useState(window.localStorage.moviesearch)
     const [sortGoodBad, setSortGoodBad] = useState(null)
 
     useEffect(() => {
@@ -18,6 +18,7 @@ const Form = () => {
         e.preventDefault();
         const inputValue = document.getElementById('search-input').value;
         setSearch(inputValue);//la nouvelle valeur de search est celle de inputValue (l'input type texte)
+        window.localStorage.moviesearch = inputValue
     }
 
     return (
