@@ -2,7 +2,10 @@ import React from "react";
 import { useState } from "react";
 
 const Card = ({ movie }) => {
-    const [icon, setIcon] = useState(window.localStorage.movies.includes(movie.id.toString()) ? '❤️' : '🤍');
+    
+    // const [icon, setIcon] = useState(window.localStorage.movies ?
+    //     window.localStorage.movies.includes(movie.id.toString()) ? '❤️' : '🤍'
+    // : '🤍');
 
     const dateFormater = (date) => {
         let [yy, mm, dd] = date.split("-");
@@ -81,17 +84,18 @@ const Card = ({ movie }) => {
             : [];
 
         if (!storedData.includes(movie.id.toString())) {
-            storedData.push(movie.id);
+            storedData.push(movie.id.toString);
             window.localStorage.movies = storedData;
-            setIcon('❤️');
+            // setIcon('❤️');
         }
-    }
+    };
 
     const deleteStorage = () => {
-        let storedData =  window.localStorage.movies.split(",");
+        let storedData = window.localStorage.movies.split(",");
         let newData = storedData.filter((id) => id != movie.id);
         window.localStorage.movies = newData; 
-        setIcon('🤍');
+        // setIcon('🤍');
+        
     }
     
     return (
@@ -123,19 +127,19 @@ const Card = ({ movie }) => {
                 }
             </ul>
             
-            <section className="synopsislike">
-                {movie.overview ? <h3>Synopsis</h3> : ""}
+            {/* <section className="synopsislike"> */}
+                {/* {movie && movie.overview ? <h3>Synopsis</h3> : ""} */}
                 
-                {movie.genre_ids ? (
+                {movie.genre_ids && window.localStorage.movies ? (
                     window.localStorage.movies.includes(movie.id.toString()) ? (
                         <div className="btn" onClick={() => {
                             deleteStorage();
                         }
-                        }>{icon}</div>
+                        }>❤️</div>
                     ) : (<div className="btn" onClick={() => {
                                 addStorage();
                             }
-                            }>{icon}</div>                          
+                            }>🤍</div>                          
                     )
                 ) : (
                     <div className="btn" onClick={() => {
@@ -144,7 +148,7 @@ const Card = ({ movie }) => {
                     }}>💔</div>
                 )}
 
-            </section>
+            {/* </section> */}
             
             <p>{movie.overview}</p>
 
