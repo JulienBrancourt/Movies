@@ -5,19 +5,19 @@
     text-shadow: 2px 3px 0px black;
     text-align: center;
     letter-spacing: 2px;
+    padding-top: 25px;
     @media (max-width: 850px) {
-      padding-top: 10px;
+      padding-top: 15px;
     }
   }
   nav {
-    position: absolute;
+    position: relative;
     top: 16px;
     left: 16px;
     font-size: 1.3rem;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     @media (max-width: 680px) {
-    position: relative;
     font-size: 1rem;
   }
 

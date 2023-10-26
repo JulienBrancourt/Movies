@@ -15,7 +15,7 @@ const Header = () => {
                 </ul>
             </nav>
         
-            <h1>Movies</h1>
+            <h1>Films</h1>
         </div>
     );
 };

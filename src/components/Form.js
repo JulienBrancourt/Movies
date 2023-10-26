@@ -18,7 +18,7 @@ const Form = () => {
         e.preventDefault();
         const inputValue = document.getElementById('search-input').value;
         setSearch(inputValue);//la nouvelle valeur de search est celle de inputValue (l'input type texte)
-        // window.localStorage.moviesearch = inputValue
+        window.localStorage.moviesearch = inputValue
     }
 
     return (
@@ -45,6 +45,7 @@ const Form = () => {
             <div className="result">{
                 moviesData
                     .slice(0, 12)
+                    // eslint-disable-next-line
                     .sort((a, b) => {
                         if (sortGoodBad === "goodToBad") {
                             return b.vote_average - a.vote_average;

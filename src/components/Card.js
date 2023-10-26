@@ -3,9 +3,9 @@ import { useState } from "react";
 
 const Card = ({ movie }) => {
     
-    // const [icon, setIcon] = useState(window.localStorage.movies ?
-    //     window.localStorage.movies.includes(movie.id.toString()) ? '❤️' : '🤍'
-    // : '🤍');
+    const [icon, setIcon] = useState(window.localStorage.movies ?
+        window.localStorage.movies.includes(movie.id.toString()) ? '❤️' : '🤍'
+    : '🤍');
 
     const dateFormater = (date) => {
         let [yy, mm, dd] = date.split("-");
@@ -84,17 +84,18 @@ const Card = ({ movie }) => {
             : [];
 
         if (!storedData.includes(movie.id.toString())) {
-            storedData.push(movie.id.toString);
+            storedData.push(movie.id.toString());
             window.localStorage.movies = storedData;
-            // setIcon('❤️');
+            setIcon('❤️');
         }
     };
 
     const deleteStorage = () => {
         let storedData = window.localStorage.movies.split(",");
+        // eslint-disable-next-line
         let newData = storedData.filter((id) => id != movie.id);
         window.localStorage.movies = newData; 
-        // setIcon('🤍');
+        setIcon('🤍');
         
     }
     
@@ -115,9 +116,9 @@ const Card = ({ movie }) => {
             <h5> Sorti le {dateFormater(movie.release_date)}</h5>
             : null}
             
-            <h4>
-                {movie.vote_average.toFixed(1)}/10 <span>★</span>
-            </h4>
+            <h5>
+                {movie.vote_average.toFixed(1)}/10
+            </h5>
 
             <ul>
                 {
@@ -130,7 +131,7 @@ const Card = ({ movie }) => {
             {/* <section className="synopsislike"> */}
                 {/* {movie && movie.overview ? <h3>Synopsis</h3> : ""} */}
                 
-                {movie.genre_ids && window.localStorage.movies ? (
+                {/* {movie.genre_ids && window.localStorage.movies ? (
                     window.localStorage.movies.includes(movie.id.toString()) ? (
                         <div className="btn" onClick={() => {
                             deleteStorage();
@@ -146,7 +147,22 @@ const Card = ({ movie }) => {
                         deleteStorage();
                         window.location.reload();
                     }}>💔</div>
-                )}
+                )} */}           
+            {
+            movie.genre_ids ? (
+                window.localStorage.movies ? (
+                window.localStorage.movies.includes(movie.id.toString()) ? (
+                    <div className="btn" onClick={() => { deleteStorage(); }}>{icon}</div>
+                ) : (
+                    <div className="btn" onClick={() => { addStorage(); }}>{icon}</div>
+                )
+                ) : (
+                <div className="btn" onClick={() => { addStorage(); }}>{icon}</div>
+                )
+            ) : (
+                <div className="btn" onClick={() => { deleteStorage(); window.location.reload(); }}>💔</div>
+            )
+            }
 
             {/* </section> */}
             
