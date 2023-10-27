@@ -8,7 +8,7 @@
 
     input[type="text"] {
       padding: 1px 10px;
-      border-radius: 10px 10px 0 0;
+      border-radius: 5px 10px 0 0;
       border: none;
       font-size: 1rem;
       display: block;
@@ -21,7 +21,7 @@
     input[type="submit"] {
       padding: 1px 10px;
       width: 220px;
-      border-radius: 0 0 10px 10px;
+      border-radius: 0 0 5px 5px;
       border: none;
       background: #0582bc;
       color: $white;

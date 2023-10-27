@@ -113,7 +113,7 @@ const Card = ({ movie }) => {
             <h2>{movie.title}</h2>
 
             {movie.release_date ? 
-            <h5> Sorti le {dateFormater(movie.release_date)}</h5>
+            <h5> Sorti le {dateFormater(movie.release_date) }</h5>
             : null}
             
             <h5>
