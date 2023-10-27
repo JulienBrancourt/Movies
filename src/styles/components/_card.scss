@@ -44,6 +44,13 @@
     line-height: 20px;
     font-size: 1.2rem;
   }
+
+  .sortienote {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+  }
+
   h5 {
     color: $white;
     letter-spacing: 1px;
@@ -116,15 +123,16 @@
 
   p {
     color: $white;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 20px;
-    height: 120px;
-    margin-bottom: 20px;
+    height: 160px;
+    // margin-bottom: 10px;
+    margin-top: 10px;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-color: #0582bc;
     scrollbar-width: thin;
-    padding: 0 10px 20px 0px;
+    padding: 0px 10px 0px 0px;
     text-align: justify;
 
      &::-webkit-scrollbar {

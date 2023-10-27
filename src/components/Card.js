@@ -111,15 +111,16 @@ const Card = ({ movie }) => {
             />
 
             <h2>{movie.title}</h2>
-
-            {movie.release_date ? 
-            <h5> Sorti le {dateFormater(movie.release_date) }</h5>
-            : null}
             
-            <h5>
-                {movie.vote_average.toFixed(1)}/10
-            </h5>
-
+            <div className="sortienote">
+                {movie.release_date ? 
+                <h5> Sorti le {dateFormater(movie.release_date) }</h5>
+                : null}
+                
+                <h5>
+                    {movie.vote_average.toFixed(1)}/10
+                </h5>
+            </div>
             <ul>
                 {
                     movie.genre_ids
